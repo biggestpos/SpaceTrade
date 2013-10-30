@@ -16,6 +16,20 @@ public class Market implements CommerceIF {
 
     int credits;
 
-    public Market(int initFuel, int initFood, int initFun)
+    public Market(int initFuel, int initFood, int initFun, int credits){
+
+        this.fuel = initFuel;
+        this.food = initFood;
+        this.fun = initFun;
+
+        this.credits = credits;
+    }
+
+    public boolean OfferToBuy(Commodity commType, int quantity, int totalCredits){
+
+
+
+        return false;
+    }
 
 }

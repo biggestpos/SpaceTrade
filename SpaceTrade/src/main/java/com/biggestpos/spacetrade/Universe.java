@@ -37,7 +37,9 @@ public class Universe {
 
             Sector aSector = mySectors[x][y][z];
 
-            aSector.myMarket = new Market();
+            aSector.myMarket = new Market(myRandom.nextInt(10000), myRandom.nextInt(500), myRandom.nextInt(250), myRandom.nextInt(10000));
+
+
         }
     }
 
