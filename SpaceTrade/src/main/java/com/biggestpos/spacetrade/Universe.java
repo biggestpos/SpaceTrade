@@ -14,6 +14,7 @@ public class Universe {
     Random myRandom = new Random(seed);
 
     Sector[][][] mySectors = new Sector[size][size][size];
+    ArrayList<Market> myMarkets = new ArrayList<Market>();
 
     public Universe(){
 
@@ -21,7 +22,7 @@ public class Universe {
             for(int y = 0; y <= size;y++){
                 for(int z = 0; z <= size;z++){
 
-                    Sector aSector = new Sector(x, y, z);
+                    Sector aSector = new Sector(x, y, z, this);
                     aSector.navigability = myRandom.nextFloat();
 
                     mySectors[x][y][z] = aSector;
@@ -40,6 +41,7 @@ public class Universe {
 
             if(aSector.myMarket == null && aSector.navigability < 0.25){
                 aSector.myMarket = new Market(myRandom.nextInt(10000), myRandom.nextInt(500), myRandom.nextInt(250), myRandom.nextInt(10000));
+                myMarkets.add(aSector.myMarket);
                 i++;
             }
 
