@@ -30,14 +30,17 @@ public class Universe {
         }
 
         //lets pre-populate the world with with markets (space ports)
-        for(int i = 0;i <= size;i++){
-            x = myRandom.nextInt(10);
-            y = myRandom.nextInt(10);
-            z = myRandom.nextInt(10);
+        for(int i = 0;i <= size;){
+            int x = myRandom.nextInt(10);
+            int y = myRandom.nextInt(10);
+            int z = myRandom.nextInt(10);
 
             Sector aSector = mySectors[x][y][z];
 
-            aSector.myMarket = new Market(myRandom.nextInt(10000), myRandom.nextInt(500), myRandom.nextInt(250), myRandom.nextInt(10000));
+            if(aSector.myMarket == null){
+                aSector.myMarket = new Market(myRandom.nextInt(10000), myRandom.nextInt(500), myRandom.nextInt(250), myRandom.nextInt(10000));
+                i++;
+            }
 
 
         }
