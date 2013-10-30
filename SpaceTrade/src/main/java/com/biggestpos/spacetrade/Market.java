@@ -3,7 +3,7 @@ package com.biggestpos.spacetrade;
 /**
  * Created by robpayne on 10/29/13.
  */
-public class Market {
+public class Market implements CommerceIF {
 
     int fuel;
     int maxFuel;
@@ -13,5 +13,9 @@ public class Market {
 
     int fun;
     int maxFun;
+
+    int credits;
+
+    public Market(int initFuel, int initFood, int initFun)
 
 }
