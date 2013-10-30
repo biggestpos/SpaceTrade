@@ -8,7 +8,7 @@ import java.util.Random;
  */
 public class Universe {
 
-    int size = 10;
+    public static int size = 10;
     long seed = 1492;
 
     Random myRandom = new Random(seed);
@@ -43,7 +43,6 @@ public class Universe {
                 i++;
             }
 
-
         }
     }
 
@@ -51,7 +50,7 @@ public class Universe {
         return mySectors[x][y][z];
     }
 
-    ArrayList<Sector> scanAdjacentSectors(int x, int y, int z){
+    public ArrayList<Sector> scanAdjacentSectors(int x, int y, int z){
         ArrayList<Sector> adjacentSectors = new ArrayList<Sector>();
 
         int xPlus;
